@@ -1,0 +1,140 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* LiLas Brand Tokens in HSL (space-separated for tailwind hsl(var(--token))) */
+    --espresso: 19 41% 12%;
+    --rustic: 24 35% 26%;
+    --cream: 33 47% 92%;
+    --beige: 35 39% 85%;
+    --gold: 42 53% 54%;
+    --terra: 12 54% 54%;
+    --teal: 173 61% 42%;
+
+    /* Elevation */
+    --bg: 40 100% 99%; /* #FFFDF9 */
+    --surface: 40 100% 98%; /* #FFFBF5 */
+    --surface-2: 33 44% 93%; /* #F5EEE6 */
+
+    /* Text */
+    --text-primary: var(--espresso);
+    --text-secondary: 30 12% 33%;
+
+    /* Map to shadcn semantic tokens */
+    --background: var(--bg);
+    --foreground: var(--text-primary);
+
+    --card: var(--surface);
+    --card-foreground: var(--text-primary);
+
+    --popover: var(--surface);
+    --popover-foreground: var(--text-primary);
+
+    --primary: var(--espresso);
+    --primary-foreground: var(--cream);
+
+    --secondary: 35 39% 90%;
+    --secondary-foreground: var(--espresso);
+
+    --muted: 35 39% 92%;
+    --muted-foreground: 30 12% 40%;
+
+    --accent: var(--gold);
+    --accent-foreground: 33 47% 98%;
+
+    --destructive: var(--terra);
+    --destructive-foreground: 33 47% 98%;
+
+    --border: 35 39% 88%;
+    --input: 35 39% 88%;
+    --ring: var(--gold);
+
+    --radius: 0.6rem;
+
+    /* Sidebar (if used) */
+    --sidebar-background: var(--surface);
+    --sidebar-foreground: var(--text-primary);
+    --sidebar-primary: var(--espresso);
+    --sidebar-primary-foreground: var(--cream);
+    --sidebar-accent: 35 39% 92%;
+    --sidebar-accent-foreground: var(--text-primary);
+    --sidebar-border: 35 39% 88%;
+    --sidebar-ring: var(--gold);
+  }
+
+  .dark {
+    /* Dark mode adjustments */
+    --bg: 20 18% 7%; /* #14100E */
+    --surface: 18 20% 9%; /* #1B1512 */
+    --surface-2: 20 22% 12%; /* #221A16 */
+
+    --text-primary: 40 70% 96%; /* #F9F4EC */
+    --text-secondary: 34 24% 80%; /* #D9D1C6 */
+
+    --espresso: 45 58% 78%; /* brand shifts to brighter gold on dark */
+
+    --background: var(--bg);
+    --foreground: var(--text-primary);
+
+    --card: var(--surface);
+    --card-foreground: var(--text-primary);
+
+    --popover: var(--surface);
+    --popover-foreground: var(--text-primary);
+
+    --primary: 45 58% 78%; /* gold */
+    --primary-foreground: 18 20% 9%;
+
+    --secondary: 24 13% 20%;
+    --secondary-foreground: 40 70% 96%;
+
+    --muted: 24 13% 20%;
+    --muted-foreground: 34 12% 70%;
+
+    --accent: 45 58% 78%;
+    --accent-foreground: 18 20% 9%;
+
+    --destructive: 10 65% 40%;
+    --destructive-foreground: 40 70% 96%;
+
+    --border: 24 13% 20%;
+    --input: 24 13% 20%;
+    --ring: 45 58% 78%;
+
+    --sidebar-background: 24 13% 20%;
+    --sidebar-foreground: 40 70% 96%;
+    --sidebar-primary: 45 58% 78%;
+    --sidebar-primary-foreground: 18 20% 9%;
+    --sidebar-accent: 24 13% 20%;
+    --sidebar-accent-foreground: 40 70% 96%;
+    --sidebar-border: 24 13% 20%;
+    --sidebar-ring: 45 58% 78%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+}
